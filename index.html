@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Supermercados</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #64748b;
+      --accent: #f59e0b;
+      --background: #f8fafc;
+      --text: #1e293b;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --white: #ffffff;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      color: var(--primary);
+      font-size: 1.75rem;
+    }
+    .intro-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .intro-section h2 {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+    .intro-section p {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .supermarkets-grid {
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .supermarket-card {
+      background-color: var(--white);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .supermarket-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .supermarket-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .supermarket-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .supermarket-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .supermarket-description {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .supermarket-button {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .supermarket-button:hover {
+      background-color: var(--primary-dark);
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--text);
+      color: var(--white);
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .intro-section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    /* Estilos para el botón de volver */
+    .back-button-container {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 1200px;
+      padding: 0 1rem;
+    }
+    .back-button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+    .back-button:hover {
+      background-color: #e68a00;
+      transform: translateY(-2px);
+    }
+    .back-button {
+        /* Mantener los estilos actuales */
+        margin-top: 1rem; /* Añadir separación */
+    }
+
+    .back-button::before {
+        content: "←"; /* Agregar flecha */
+        margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Directorio de Supermercados</h1>
+  </header>
+
+  <!-- Botón para volver a Concarán Market -->
+  <div class="back-button-container">
+    <a href="https://wold-marketplaces.github.io/Concaran-Marketplace/" class="back-button">
+      Volver a Concarán Market
+    </a>
+  </div>
+
+  <section class="intro-section">
+    <h2>Conoce los mejores supermercados de la zona</h2>
+    <p>
+      Aquí podrás encontrar diferentes opciones de supermercados y almacenes 
+      para surtir tu despensa con todo lo que necesitas. Selecciona uno para 
+      más información sobre promociones, horarios y productos.
+    </p>
+  </section>
+
+  <section class="supermarkets-grid">
+    <!-- Tarjeta #1 -->
+    <div class="supermarket-card">
+      <img
+        src="imagen de mini kiosco ian.png"
+        alt="Mini Kiosco Ian"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Mini Kiosco Ian</h3></h3>
+        <p class="supermarket-description">
+          Tu kiosco de barrio ahora online. Encuentra golosinas, bebidas y snacks favoritos con pedidos por WhatsApp. 
+          Delivery rápido en Concarán. ¡Hacé tu pedido sin moverte de casa!
+        </p>
+        <a href="https://wold-marketplaces.github.io/Mini-Kiosco-ian/" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+    
+    <!-- Tarjeta #1 -->
+    <div class="supermarket-card">
+      <img
+        src="Imagen demo de supermercado.png"
+        alt="Supermercado El Centro"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Sistema Web para Supermercados</h3></h3>
+        <p class="supermarket-description">
+          Sistema web profesional con gestión de inventario, pedidos online y WhatsApp Business integrado. 
+          Moderniza tu negocio con nuestra solución completa de e-commerce.
+      </p>
+        <a href="https://wold-marketplaces.github.io/Sistema-Web-Profesional-para-Supermercados/" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #1 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Supermercado El Centro"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Supermercado El Centro</h3>
+        <p class="supermarket-description">
+          Ubicado en pleno centro de la ciudad, con grandes ofertas diarias 
+          y variedad de productos de alta calidad.
+        </p>
+        <a href="https://example.com/el-centro" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #2 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/3738089/pexels-photo-3738089.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Supermercado Santa María"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Supermercado Santa María</h3>
+        <p class="supermarket-description">
+          Conocido por sus precios económicos y atención amable. Ideal para 
+          las compras semanales.
+        </p>
+        <a href="https://example.com/santa-maria" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #3 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/3962285/pexels-photo-3962285.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Eco Mercado"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Eco Mercado</h3>
+        <p class="supermarket-description">
+          Especializado en productos orgánicos y eco-friendly. Aplica 
+          prácticas sustentables para el cuidado del medio ambiente.
+        </p>
+        <a href="https://example.com/eco-mercado" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #4 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/2347341/pexels-photo-2347341.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Supermercado Gigante"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Supermercado Gigante</h3>
+        <p class="supermarket-description">
+          Uno de los más completos, con secciones de carnes, frutas, 
+          congelados, panadería y productos para el hogar.
+        </p>
+        <a href="https://example.com/gigante" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #5 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/271458/pexels-photo-271458.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Maravilla Market"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Maravilla Market</h3>
+        <p class="supermarket-description">
+          Amplio surtido de productos nacionales y extranjeros. 
+          Ofrece descuentos especiales para clientes frecuentes.
+        </p>
+        <a href="https://example.com/maravilla-market" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta #6 -->
+    <div class="supermarket-card">
+      <img
+        src="https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Supermercado Familiar"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Supermercado Familiar</h3>
+        <p class="supermarket-description">
+          Ideal para quienes buscan un trato cercano. Destaca su zona 
+          de frutas y verduras frescas.
+        </p>
+        <a href="https://example.com/familiar" class="supermarket-button">
+          Visitar Sitio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Directorio de Supermercados. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+</qodoArtifact>
