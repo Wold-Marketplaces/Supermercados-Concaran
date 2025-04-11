@@ -168,6 +168,29 @@
         content: "←"; /* Agregar flecha */
         margin-right: 0.5rem;
     }
+    /* Estilos para la lista de características */
+    .supermarket-features {
+        list-style: none;
+        margin: 0.75rem 0 1rem 0;
+        padding-left: 1.25rem;
+        color: var(--secondary);
+        font-size: 0.9rem;
+    }
+    
+    .supermarket-features li {
+        margin-bottom: 0.4rem;
+        color: var(--secondary);
+        position: relative;
+        list-style-type: none;
+    }
+    
+    .supermarket-features li::before {
+        content: "✓";
+        color: var(--primary);
+        position: absolute;
+        left: -1.25rem;
+        font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -228,6 +251,32 @@
         </p>
         <a href="https://tilisaraomarket.github.io/Per-te-Confecciones-y-Disfraces/" class="supermarket-button">
           Visitar Sitio
+        </a>
+      </div>
+    </div>
+
+    <!-- Tarjeta Per-te Uniformes -->
+    <div class="supermarket-card">
+      <img
+        src="imagen de per.te uniformes.jpg"
+        alt="Per-te Uniformes Escolares - Logo Oficial"
+        class="supermarket-image"
+      />
+      <div class="supermarket-content">
+        <h3 class="supermarket-title">Per-te Uniformes</h3>
+        <p class="supermarket-description">
+          Especialistas en uniformes escolares con más de 10 años de experiencia. 
+          Confección a medida con materiales premium y atención personalizada.
+          Encontranos en Belgrano y 25 de Mayo, Tilisarao.
+        </p>
+        <ul class="supermarket-features">
+          <li>✓ Uniformes escolares completos</li>
+          <li>✓ Talles exactos y duraderos</li>
+          <li>✓ Bordados institucionales</li>
+          <li>✓ Entrega rápida y garantizada</li>
+        </ul>
+        <a href="https://tilisaraomarket.github.io/Per-te-Uniformes/" class="supermarket-button">
+          Ver Colección Completa
         </a>
       </div>
     </div>
